@@ -1,5 +1,5 @@
 <?php
-require_once '../clases/Picture.php';
+require_once './clases/Picture.php';
 
 class DBManager{
     const IMAGES_TABLE = "imagenes";
@@ -18,9 +18,14 @@ class DBManager{
         $this->_upass = $i_pass;
         $this->_dbname = $i_dbname;
         
-        $this->_conexion = mysqli_connect($this->_path, $this->_uname, $this->_upass, $this->_dbname);
-        if (!$this->_conexion){
-            die ('Error de Conexión (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
+        try{
+            $this->_conexion = mysqli_connect($this->_path, $this->_uname, $this->_upass, $this->_dbname);
+            if (!$this->_conexion){
+                //die ('Error de Conexión (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
+                return NULL;
+            }
+        }catch(Exception $e){
+            return NULL;
         }
     }
     
@@ -32,6 +37,10 @@ class DBManager{
             $picture = new Picture($fila['id'], $fila['usuario'], $fila['foto'], $fila['longitud'], $fila['latitud']);
             return $picture;
         }
+        return NULL;
+    }
+    
+    function GetUser($i_id){
         return NULL;
     }
     

@@ -8,10 +8,11 @@
 
        
   <testsuites>
-    <testsuite name="PictureTest">
-      <directory suffix=".php">test</directory>
-      <file>test/PictureTest.php</file>
+    <testsuite name="MyPhoto Tests">
+      <directory>test</directory>
+      <file>test/*Test.php</file>
     </testsuite>
+
   </testsuites>
 
   <logging>
@@ -21,11 +22,11 @@
     <log type="coverage-clover" target="build/logs/clover.xml"/>
     <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
   </logging>
-
+<!--
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">clases</directory>
     </whitelist>
   </filter>
-
+-->
 </phpunit>
