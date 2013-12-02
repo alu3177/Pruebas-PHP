@@ -41,7 +41,7 @@ class DBManager{
     }
     
     function GetUser($i_id){
-        return NULL;
+        return 0;
     }
     
 }
