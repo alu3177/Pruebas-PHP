@@ -1,6 +1,6 @@
 <?php
 
-require_once "../clases/Picture.php";
+require_once "./clases/Picture.php";
 require_once 'PHPUnit.php';
 
 class PictureTest extends PHPUnit_TestCase{
@@ -8,7 +8,7 @@ class PictureTest extends PHPUnit_TestCase{
     var $_picture;
     
     function setUp(){
-        $this->_picture = new Picture(0, "user", "../images/Big Ben.JPG", 1.0, -0.57);
+        $this->_picture = new Picture(0, "user", "./images/Big Ben.JPG", 1.0, -0.57);
     }
     
     function testValidPath(){
