@@ -2,7 +2,7 @@
 
 <project name="MyPhoto" default="build">
  <target name="build"
-   depends="prepare,lint,phpunit,sonar"/>
+   depends="prepare,lint,phpunit,who,sonar"/>
 <!--
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
@@ -52,6 +52,10 @@
    <exec executable="/home/aladaris/Escritorio/sonar-runner-2.3/bin/sonar-runner"  failonerror="true">
      <arg value="-X" />
    </exec>
+ </target>
+ 
+ <target name="who">
+   <exec executable="whoami" />
  </target>
 
 </project>
