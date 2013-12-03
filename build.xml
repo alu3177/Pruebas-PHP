@@ -2,7 +2,7 @@
 
 <project name="MyPhoto" default="build">
  <target name="build"
-   depends="prepare,lint,phpunit"/>
+   depends="prepare,lint,phpunit,sonar"/>
 <!--
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
@@ -46,6 +46,12 @@
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
   <exec executable="/home/aladaris/pear/bin/phpunit" failonerror="true"/>
+ </target>
+ 
+ <target name="sonar" description="Invoca el Sonar-Runner para realizar el análisis con Sonar">
+   <exec executable="/home/aladaris/Escritorio/sonar-runner-2.3/bin/sonar-runner"  failonerror="true">
+     <arg value="-X" />
+   </exec>
  </target>
 
 </project>
