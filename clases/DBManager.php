@@ -20,10 +20,6 @@ class DBManager{
         
         try{
             $this->_conexion = mysqli_connect($this->_path, $this->_uname, $this->_upass, $this->_dbname);
-            if (!$this->_conexion){
-                //die ('Error de Conexión (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
-                return NULL;
-            }
         }catch(Exception $e){
             return NULL;
         }
